@@ -1,7 +1,71 @@
 ---
 import { Image } from "astro:assets";
+import meNy from '../img/Me-Ny-Edit.jpg'
+import meCartoon from '../img/me.CartoonBg.png'
 ---
-<article>
-    <!-- <Image src={} alt='' />
-    <Image src={} alt='' /> -->
+<article class=" ContImg " title='Hello World!'>
+    <Image 
+    class='first'  
+    src={meNy} alt='NYC' />
+    <Image 
+    class="second" 
+    src={meCartoon} alt='cartoon' />
 </article>
+
+<style>
+    .ContImg .first{
+        box-shadow: 0 50px 60px -60px rgba(0, 30, 255, 0.5);
+        border-radius: 4px;
+        object-fit: cover;
+        width: 100%;
+    }
+  .ContImg .second{
+        position: absolute;
+        width:200px ;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        transform: translateY(25%);
+        transition: .3s ease;
+        opacity: 0;
+    }
+    .ContImg{
+        position:relative;
+        width: 250px;
+        transition: all 0.3s ease;
+    }
+    .ContImg:hover{
+        transform: 
+        perspective(200px)
+        rotateX(10deg)
+        translateY(-5%)
+        translateZ(0)
+        ;
+    }
+    .ContImg::before{
+        content:'';
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        background-image:
+        linear-gradient(
+            to bottom,
+            transparent 10%,
+            rgba(0, 0, 0, 0.5) 50%,
+            rgba(0,0,0)95%
+        )
+        ;
+        opacity: 0;
+        transition: all .2s ease;
+    }
+    .ContImg:hover::before{
+        opacity: 1;
+    }
+    .ContImg:hover .second{
+        opacity: 1;
+        transform: translateY(10%) ;
+        
+    }
+</style>
