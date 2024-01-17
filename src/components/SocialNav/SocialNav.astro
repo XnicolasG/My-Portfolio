@@ -1,0 +1,28 @@
+---
+import SocialButton from './SocialButtons.astro'
+import Github from '../icons/Github.astro'
+import LinkedIn from '../icons/LinkedIn.astro'
+import Email from '../icons/Email.astro'
+---
+
+<nav class="flex flex-row flex-wrap justify-center items-center mt-4 gap-2">
+    <SocialButton href="https://github.com/XnicolasG" >
+        <Github class="size-4 md:size-6 "/>
+        <span class="inline sm:hidden lg:inline">
+            'XnicolasG'
+        </span>
+    </SocialButton>
+    <SocialButton href="https://www.linkedin.com/in/nicol%C3%A1s-garc%C3%ADa-l%C3%B3pez-/">
+        <LinkedIn class="size-4 md:size-6" />
+        <span class="inline sm:hidden lg:inline">
+            Nicolás G
+        </span>
+    </SocialButton>
+    <SocialButton href="mailto:nicolasg.ngl@gmail.com">
+        <Email class="size-4 md:size-6" />
+        <span class="inline sm:hidden lg:inline">
+
+            Nicolasg.ngl
+        </span>
+    </SocialButton>
+</nav>
