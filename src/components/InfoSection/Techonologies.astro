@@ -1,0 +1,47 @@
+---
+import React from "../icons/React.astro";
+import JavaScript from "../icons/JavaScript.astro";
+import Redux from "../icons/Redux.astro";
+import Firebase from "../icons/Firebase.astro";
+import AstroIcon from '../icons/AstroIcon.astro'
+import Tailwind from '../icons/Tailwind.astro'
+import Sass from '../icons/Sass.astro'
+import Notion from '../icons/Notion.astro'
+import SocialButtons from "../SocialNav/SocialButtons.astro";
+
+const TAGS = {
+    React: {
+        Name: "React",
+        class: "bg-grey-800 text-sky-600",
+        icon: React,
+    },
+    JavaScript: {
+        Name: "JavaScript",
+        class: "bg-yellow-400 text-back",
+        icon: JavaScript,
+    },
+    Redux: {
+        Name: "Redux",
+        class: "text-purple-700 bg-white",
+        icon: Redux,
+    },
+    Firebase: {
+        Name: "Firebase",
+        class: "bg-white text-black",
+        icon: Firebase,
+    },
+};
+---
+
+<ul class="flex flex-row justify-center items-center">
+    {
+        Object.values(TAGS).map((tag)=>(
+        <li>
+            <SocialButtons>
+                {tag.Name}
+                <tag.icon class="size-4"/>
+            </SocialButtons>
+        </li>
+        ))
+    }
+</ul>
