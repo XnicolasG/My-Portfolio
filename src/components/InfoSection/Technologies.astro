@@ -1,0 +1,102 @@
+---
+import React from "../icons/React.astro";
+import JavaScript from "../icons/JavaScript.astro";
+import Redux from "../icons/Redux.astro";
+import Firebase from "../icons/Firebase.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
+import Css from "../icons/Css.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import Sass from "../icons/Sass.astro";
+import Notion from "../icons/Notion.astro";
+
+import SocialButtons from "../SocialNav/SocialButtons.astro";
+
+const TAGS = {
+    React: {
+        Name: "React",
+        class: "bg-grey-800 text-sky-600",
+        icon: React,
+    },
+    Redux: {
+        Name: "Redux",
+        class: "text-purple-700 bg-white",
+        icon: Redux,
+    },
+    Firebase: {
+        Name: "Firebase",
+        class: "bg-white text-black",
+        icon: Firebase,
+    },
+    Astro: {
+        Name: "Astro",
+        class: "text-red-500 bg-white",
+        icon: AstroIcon,
+    },
+    JavaScript: {
+        Name: "JavaScript",
+        class: "bg-yellow-400 text-back",
+        icon: JavaScript,
+    },
+    CSS: {
+        Name: "CSS",
+        class: "bg-blue-500 text-white",
+        icon: Css,
+    },
+    Sass: {
+        Name: "Sass",
+        Class: "bg-white text-rose-500",
+        icon: Sass,
+    },
+    Tailwind: {
+        Name: "Tailwind",
+        class: "bg-sky-600 text-white",
+        icon: Tailwind,
+    },
+    Notion: {
+        Name: "Notion",
+        class: "bg-black",
+        icon: Notion,
+    },
+};
+---
+
+<section class="relative flex w-72 mx-auto overflow-hidden bg-black rounded-xl">
+    <div
+        class="flex flex-row justify-center items-center w-full horizontal-slide"
+    >
+        {
+            Object.values(TAGS).map((tag) => (
+                <span class="inline-flex m-2 transition duration-100">
+                    <SocialButtons>
+                        <tag.icon class="size-4" />
+                        {tag.Name}
+                    </SocialButtons>
+                </span>
+            ))
+        }
+        {
+            Object.values(TAGS).map((tag) => (
+                <span class="inline-flex m-2 transition duration-100">
+                    <SocialButtons>
+                        <tag.icon class="size-4" />
+                        {tag.Name}
+                    </SocialButtons>
+                </span>
+            ))
+        }
+    </div>
+</section>
+
+<style>
+    .horizontal-slide {
+        animation: InfiteSlide 15s linear infinite;
+    }
+    @keyframes InfiteSlide {
+        0% {
+            transform: translateX(-150%);
+        }
+        100% {
+            transform: translateX(100%);
+        }
+    }
+</style>
