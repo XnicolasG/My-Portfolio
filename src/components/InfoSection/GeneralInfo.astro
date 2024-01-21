@@ -1,48 +1,57 @@
 ---
-import Keyboard from "../icons/Keyboard.astro"
-import Techonologies from "./Technologies.astro"
-import Location from "../icons/Location.astro"
+import Keyboard from "../icons/Keyboard.astro";
+import Techonologies from "./Technologies.astro";
+import Location from "../icons/Location.astro";
 ---
-<section class="bg-gray-400/20 rounded-lg my-4 p-4 transition-all">
-    <article class="flex gap-x-3 mb-2">
+
+<section
+    class="bg-gray-400/20 mx-auto rounded-lg my-4 p-4 transition-all sm:w-[75%]"
+>
+    <article class="flex items-center gap-x-3 mb-2">
         <Location
-            class="size-14 bg-gray-900 p-2 text-blue-600 hover:bg-gradient-to-r from-red-500 to-pink-600 rounded-xl hover:text-white transition-all"
+            class="size-14 sm:size-12 bg-gray-900 p-2 text-blue-600 hover:bg-gradient-to-r from-red-500 to-pink-600 rounded-xl hover:text-white transition-all"
         />
         <div class="">
             <h2 class="text-gray-300">Location</h2>
-            <h1 class="text-xl font-semibold">Bogotá, Colombia</h1>
+            <h1 class="text-xl sm:text-sm md:text-xl font-semibold">
+                Bogotá, Colombia
+            </h1>
         </div>
     </article>
     <hr />
     <details class="mt-3">
-        <summary class="flex gap-x-3 cursor-pointer w-[90%] ">
-          <div class="hand flex flex-row gap-x-2 justify-center items-center ">
-            <Keyboard class="size-14 bg-gray-900 p-2 text-blue-600 hover:bg-gradient-to-r from-red-500 to-pink-600 rounded-xl hover:text-white transition-all" />
-            <h1 class="text-xl font-semibold transition-all">Technologies</h1>
-          </div>
+        <summary class="flex flex-wrap gap-x-3 cursor-pointer w-[90%]">
+            <div class="hand flex flex-row gap-x-2 justify-center items-center">
+                <Keyboard
+                    class="size-14 sm:size-10 bg-gray-900 p-2 text-blue-600 hover:bg-gradient-to-r from-red-500 to-pink-600 rounded-xl hover:text-white transition-all"
+                />
+                <h1
+                    class="text-xl sm:text-sm md:text-xl font-semibold transition-all"
+                >
+                    Technologies
+                </h1>
+            </div>
         </summary>
         <p class="flex mx-auto w-5/6 mt-3 overflow-hidden">
             <Techonologies />
         </p>
     </details>
-      
-      
 </section>
 
 <style>
-    details{
+    details {
         list-style: none;
     }
-    details summary{
+    details summary {
     }
-    details summary div::after{
+    details summary div::after {
         content: "👇🏻";
     }
     details[open] summary div::after {
         -webkit-animation: rotate-emoji 0.4s ease-in-out both;
         animation: rotateHand 0.4s ease-in-out both;
     }
-    
+
     @keyframes rotateHand {
         0% {
             transform: rotate(0);
