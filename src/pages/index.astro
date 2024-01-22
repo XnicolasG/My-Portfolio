@@ -1,12 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Main from '../components/Main.astro'
+import '@fontsource/fjalla-one';
 ---
 
 <Layout 
 title="Nicolás' Portfolio -  Front-End developer"
 description="Open to work to web development using React, Astro, Tailwind">
-	<main>
-	</main>
+	<section class="bg-gray-950 w-[600px] rounded-2xl py-4 px-8 ">
+		<div class="Cont flex flex-row items-center">
+
+			<h1 class="font-bold text-4xl tracking-wide font"> <span class="font-thin text-purple-400">&lt;</span> Hello ! <span class="second "> I'm Nicolás *</span> <span class="font-thin text-purple-500"> /  &gt;</span> </h1>
+			
+		</div>
+	</section>
+	
 </Layout>
 
+<style>
+	h1{
+		font-family: 'Fjalla One', sans-serif;
+	}
+	.second{
+		visibility: hidden;
+		/* opacity: 0; */
+	}
+	.Cont:hover .second{
+		visibility: visible;
+
+		/* opacity: 1; */
+	}	
+
+</style>
