@@ -46,12 +46,22 @@ import Location from "../icons/Location.astro";
     }
     details summary div::after {
         content: "👇🏻";
+        animation:bounce-hand 1s linear infinite ;
     }
     details[open] summary div::after {
         -webkit-animation: rotate-emoji 0.4s ease-in-out both;
         animation: rotateHand 0.4s ease-in-out both;
     }
-
+    @keyframes bounce-hand {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
     @keyframes rotateHand {
         0% {
             transform: rotate(0);

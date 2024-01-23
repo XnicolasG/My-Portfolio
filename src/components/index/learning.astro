@@ -1,0 +1,56 @@
+---
+import Next from "../icons/Next.astro";
+import Sql from "../icons/Sql.astro";
+import Three from "../icons/Three.astro";
+import AI from "../icons/AI.astro";
+import SocialButtons from '../SocialNav/SocialButtons.astro'
+
+let birthdate = new Date("1997-08-29");
+let today = new Date();
+let age = today.getFullYear() - birthdate.getFullYear();
+let preAge = age - 1;
+
+const topics = {
+    Next: {
+        Name: "Next.js",
+        icon: Next,
+        Status: "In queue",
+    },
+    AI: {
+        Name: "AI",
+        icon: AI,
+        Status: "In queue",
+    },
+    SQL: {
+        Name: "SQL",
+        icon: Sql,
+        Status: "In Progress",
+    },
+    "Three.jS": {
+        Name: "Three.Js",
+        icon: Three,
+        Status: "In queue",
+    },
+};
+---
+
+    <aside class="flex flex-col mt-4 ">
+        <h2
+            class="text-2xl font-extrabold bg-gradient-to-r from-purple-200 to-purple-300 bg-clip-text text-transparent mx-auto"
+        >
+            ● Interested in learning...and i will ●
+        </h2>
+        <section class="flex flex-wrap w-[95%] justify-center items-center rounded-lg bg-gray-400/20 mt-1 mb-4">
+            {
+                Object.values(topics).map((topic) => (
+                    <span class="inline-flex m-2 cursor-pointer">
+                        <SocialButtons title={topic.Status}>
+                            <topic.icon class='size-5' />
+                            {topic.Name}
+                        </SocialButtons>
+                        </span>
+                ))
+            }
+        </section>
+    </aside>
+

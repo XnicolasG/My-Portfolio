@@ -23,7 +23,7 @@ const { title, description } = Astro.props;
 	</head>
 	<body class="bg-gradient-to-br from-blue-900 via-violet-900 to-gray-950">
 		<Header />
-		<section class="flex w-full">
+		<section class="flex flex-col sm:flex-row w-full">
 			<Main />
 			<aside class="flex mx-auto f-1/2">
 				<slot />
@@ -51,4 +51,5 @@ const { title, description } = Astro.props;
 		background-size: cover;
 		gap: 20px;
 	}
+	
 </style>
