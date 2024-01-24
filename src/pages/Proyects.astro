@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "@fontsource/fjalla-one";
+import { Image } from "astro:assets";
+import Dragon from '../img/Dragon.jpeg'
+---
+
+<Layout
+    title="Nicolás' Proyects -  Front-End developer"
+    description="This is some of my proyects where you can see the technologies that i've been using"
+>
+    <section
+        class="mx-auto bg-gray-950 w-[95%] sm:w-3/3 md:w-full p-4 rounded-b-2xl sm:rounded-2xl"
+    >
+        <div class="flex flex-col w-full gap-x-2">
+            <article class="flex items-start">
+                <span
+                    class="pretitle flex items-center text-5xl mr-2 bg-gradient-to-r from-purple-200 to-purple-500 bg-clip-text text-transparent"
+                    >✹</span
+                >
+                <h1 class="text-2xl">
+                    This Page is under construction
+                </h1>
+            </article>
+            <main
+				class="sm:w-[395px] md:w-[415px] sm:mt-2 lg:w-[560px] xl:w-[730px]"
+			>
+            <Image class="mx-auto rounded-lg w-full" src={Dragon} alt="dragon" />
+        </main>
+        </div>
+    </section>
+</Layout>
+
+<style>
+        h1{
+			font-family: "Fjalla One", sans-serif;
+		}
+</style>

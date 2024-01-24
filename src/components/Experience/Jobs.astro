@@ -1,0 +1,28 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+    {
+        Date: "March 2023 - April 2023",
+        Title: "Developer Jr - IOIP",
+        Description: `Designing BIM workflows tailored to client requirements. Customizations crafted through JavaScript and SQL. 
+            Utilizing React (JS, TS) for product code support and Blazor for product development`,
+    },
+    {
+        Date: "March 2021 - September 2021",
+        Title: "Cost analyst - Restaurante La Lupita",
+        Description:
+            `Utilization of tools such as Excel for optimal database creation, automated price and cost control with VBA assistance.
+             Additionally, adept use of Power BI for data processing and analysis, facilitating informed decision-making.`,
+    },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+    {
+        EXPERIENCE.map((it) => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...it} />
+            </li>
+        ))
+    }
+</ol>

@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "@fontsource/fjalla-one";
+import Jobs from '../components/Experience/Jobs.astro'
+---
+
+<Layout
+    title="Nicolás' Experience -  Front-End developer"
+    description="This is some of my experience in tech"
+>
+    <section
+        class="mx-auto bg-gray-950 w-[95%] sm:w-3/3 md:w-full p-4 rounded-b-2xl sm:rounded-2xl"
+    >
+        <div class="flex flex-col w-full gap-x-2">
+            <article class="flex items-start">
+                <span
+                    class="pretitle flex text-5xl mr-2 bg-gradient-to-r from-purple-200 to-purple-500 bg-clip-text text-transparent"
+                    >✹</span
+                >
+                <h1 class="text-2xl">
+                    Worked hard, learned lots, tech journey.
+                    <p
+                        class="name opacity-0 md:opacity-100 text-lg sm:text-xl tracking-wider font-bold text-purple-200 md:before:content-['💻'] text-"
+                    >
+                        My resume
+                    </p>
+                </h1>
+            </article>
+            <main
+                class="flex flex-row justify-center items-center sm:w-[395px] md:w-[415px] sm:mt-2 lg:w-[560px] xl:w-[730px]"
+            >
+                <div class="flex w-1/2 ">
+                    <h2
+                        class=" items-center text-lg lg:text-2xl font-bold mx-auto"
+                    >
+                        Studies
+                    </h2>
+                </div>
+                <div class="flex w-1/2 ">
+                    <h2
+                        class=" items-center text-lg lg:text-2xl font-bold mx-auto"
+                    >
+                        Experience
+                        <article class="mt-2 bg-gray-400/20 p-2 rounded-xl">
+                            <Jobs />
+                        </article>
+                    </h2>
+                </div>
+            </main>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    @font-face {
+        font-family: "MigraItalic-ExtralightItalic";
+        src: url("/fonts/MigraItalic-ExtralightItalic.ttf") format("truetype");
+    }
+    h1 {
+        font-family: "Fjalla One", sans-serif;
+    }
+    .name {
+        font-family: "MigraItalic-ExtralightItalic", italic;
+    }
+</style>
