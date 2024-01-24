@@ -4,6 +4,8 @@ interface Props{
     Title: string,
     Description: string
 }
+const {Date,Title,Description} = Astro.props
+
 ---
 <article class="flex w-[95%] bg-gray-400/20">
     <p class="text-gray-300">{Date}</p>
