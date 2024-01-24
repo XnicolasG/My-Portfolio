@@ -3,12 +3,9 @@ import Next from "../icons/Next.astro";
 import Sql from "../icons/Sql.astro";
 import Three from "../icons/Three.astro";
 import AI from "../icons/AI.astro";
+import Azure from '../icons/Azure.astro'
 import SocialButtons from '../SocialNav/SocialButtons.astro'
 
-let birthdate = new Date("1997-08-29");
-let today = new Date();
-let age = today.getFullYear() - birthdate.getFullYear();
-let preAge = age - 1;
 
 const topics = {
     Next: {
@@ -31,14 +28,20 @@ const topics = {
         icon: Three,
         Status: "In queue",
     },
+    Azure:{
+        Name:"Azure",
+        icon: Azure,
+        Status: 'In Progress'
+    }
 };
 ---
 
     <aside class="flex flex-col mt-4 justify-center items-center ">
+        
         <h2
-            class="text-lg  sm:text-lg md:text-xl lg:text-2xl font-extrabold bg-gradient-to-r from-purple-200 to-purple-300 bg-clip-text text-transparent mx-auto"
+            class="text-lg lg:text-2xl font-extrabold bg-gradient-to-r from-purple-100 to-purple-200 bg-clip-text text-transparent mx-auto"
         >
-            ● Interested in learning...and I will ●
+          ●Interested in learning●
         </h2>
         <section class="flex flex-wrap w-[95%] justify-center items-center rounded-lg bg-gray-400/20 mt-1 mb-4 sm:mb-1">
             {

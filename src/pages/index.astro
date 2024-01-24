@@ -1,12 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "@fontsource/fjalla-one";
-import Indexlearning from '../components/index/Indexlearning.astro'
+import Indexlearning from "../components/index/Indexlearning.astro";
 
-let birthdate = new Date("1997-08-29");
-let today = new Date();
-let age = today.getFullYear() - birthdate.getFullYear();
-let preAge = age - 1;
 ---
 
 <Layout
@@ -14,7 +10,7 @@ let preAge = age - 1;
 	description="Open to work to web development using React, Astro, Tailwind"
 >
 	<section
-		class="mx-auto bg-gray-950 w-[95%] sm:w-3/3 md:w-full p-4 rounded-b-2xl sm:rounded-2xl py-4 px-8"
+		class="mx-auto bg-gray-950 w-[95%] sm:w-3/3 md:w-full p-4 rounded-b-2xl sm:rounded-2xl"
 	>
 		<div class="flex flex-col w-full gap-x-2">
 			<article class="flex items-start">
@@ -31,32 +27,34 @@ let preAge = age - 1;
 					</p>
 				</h1>
 			</article>
-			<main class="sm:w-[350px] md:w-92 sm:mt-10 lg:w-[510px] xl:w-[650px]">
+			<main
+				class="sm:w-[350px] md:w-92 sm:mt-2 lg:w-[580px] xl:w-[780px]"
+			>
 				<p class="uppercase mt-4 font-semibold">
 					i am a <span class="highlight">front-end developer</span> based
-					in colombia (currently I'm <span
-						class="line-through decoration-double">{preAge}</span
-					>
-					{age} years old) Focus on <span
+					in colombia, mainly focus on <span
 						class="font-bold bg-gradient-to-r from-sky-300 to-blue-400 bg-clip-text text-transparent"
-						>react</span
-					> but always open and curious to learn.
+						>react.</span
+					> Not exactly an engineer, but always vibing with the idea of
+					picking up new skills. That vibe led me into the whole software
+					development scene.
 				</p>
 				<p class="uppercase mt-4 font-semibold">
-					While I may not be an engineer, I have always been someone
-					eager to learn new things, <span class="highlight"
-						>constantly seeking ways to improve</span
-					>. This passion led me into the realm of software
-					development.
+					Creating has always been something that fulfills and
+						motivates me, propelling me to work in companies where I <span class="highlight"
+						>contribute my
+					creative value </span> and allowing me to grow professionally.
 				</p>
 				<p class="uppercase mt-4 font-semibold">
-					<span class="highlight"
-						>Creating has always been something that fulfills and
-						motivates me</span
-					>, propelling me to work in various companies where I
-					contribute my creative value and allowing me to grow
-					professionally.
+					Some of my achievements include enhancing Excel database
+					structures, streamlining processes, and automating tasks to
+					boost efficiency in one role. In another, I <span class="highlight"> played a key
+					part </span>in successfully launching an app by handling front-end
+					implementation, ensuring a seamless user experience. These
+					experiences underscore my dedication to delivering
+					high-quality work in collaborative environments.
 				</p>
+				
 				<Indexlearning />
 			</main>
 		</div>
@@ -69,7 +67,8 @@ let preAge = age - 1;
 				format("truetype");
 		}
 		h1,
-		.highlight, h2 {
+		.highlight,
+		h2 {
 			font-family: "Fjalla One", sans-serif;
 		}
 		.highlight {
