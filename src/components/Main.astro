@@ -1,8 +1,9 @@
 ---
 import Photo from "./Photo.astro";
 import SocialNav from "./SocialNav/SocialNav.astro";
-import Location from "../components/icons/Location.astro";
 import GeneralInfo from "./InfoSection/GeneralInfo.astro";
+import "@fontsource/fjalla-one";
+
 ---
 
 <section
@@ -17,7 +18,7 @@ import GeneralInfo from "./InfoSection/GeneralInfo.astro";
     <!-- </div> -->
     <div class="flex flex-col mt-20 sm:mt-4 md:mt-12 lg:mt-32 tracking-wider">
         <h1
-            class="name text-2xl mb-1 sm:mb-6 md:mb-1 font-semibold lg:text-4xl cursor-default mx-auto"
+            class="name text-2xl mb-1 sm:mb-6 md:mb-1 font-medium lg:text-4xl cursor-default mx-auto"
         >
             Nicolás García López
         </h1>
@@ -40,13 +41,9 @@ import GeneralInfo from "./InfoSection/GeneralInfo.astro";
 </section>
 
 <style>
-    @font-face {
-        font-family: "MigraItalic-ExtralightItalic";
-        src: url("/fonts/MigraItalic-ExtralightItalic.ttf") format("truetype");
-    }
-    .name {
-        font-family: "MigraItalic-ExtralightItalic", italic;
-    }
+     h1{
+			font-family: "Fjalla One", sans-serif;
+		}
 </style>
 
 <!-- <section
