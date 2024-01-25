@@ -20,10 +20,10 @@ const { Date, Title, Entity, location } = Astro.props;
     >
         {Title}
     </h5>
-    <p class="text-sm font-normal text-gray-700 dark:text-white">
+    <p class="text-sm font-bold text-gray-700 dark:text-white">
         {Entity}
     </p>
-    <p>
+    <p class="text-sm before:content-['🌏']">
         {location}
     </p>
 </article>
