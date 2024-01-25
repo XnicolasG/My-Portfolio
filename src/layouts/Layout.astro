@@ -10,6 +10,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+
 ---
 
 <!doctype html>
@@ -37,6 +38,11 @@ const { title, description } = Astro.props;
 <style is:global>
 	:root {
 		color-scheme: ligh dark;
+	}
+	*::selection{
+		user-select: none;
+		background:rgb(215, 23, 74);
+		color: whitesmoke;
 	}
 	html {
 		font-family: "Onest Variable", system-ui, sans-serif;
