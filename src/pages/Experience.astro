@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import "@fontsource/fjalla-one";
 import Jobs from '../components/Experience/Jobs.astro'
+import Studies from '../components/Experience/Studies.astro'
 ---
 
 <Layout
@@ -27,24 +28,27 @@ import Jobs from '../components/Experience/Jobs.astro'
                 </h1>
             </article>
             <main
-                class="flex flex-row justify-center items-center sm:w-[395px] md:w-[415px] sm:mt-2 lg:w-[560px] xl:w-[730px]"
+                class="flex flex-col gap-x-1 sm:flex-row justify-center sm:max-h-[650px] overflow-scroll sm:w-[395px] md:w-[415px] sm:mt-2 lg:w-[560px] xl:w-[730px]"
             >
-                <div class="flex w-1/2 ">
+                <div class="flex flex-col w-full sm:w-1/2 order-2 ">
                     <h2
-                        class=" items-center text-lg lg:text-2xl font-bold mx-auto"
+                        class="flex  items-center text-lg lg:text-2xl font-bold mx-auto"
                     >
                         Studies
                     </h2>
+                    <article class=" flex justify-center  items-center pt-2  xs:rounded-xl md:rounded-l-xl">
+                        <Studies />
+                    </article>
                 </div>
-                <div class="flex w-1/2 ">
+                <div class="flex flex-col w-full sm:w-1/2 order-1 sm:order-2">
                     <h2
-                        class=" items-center text-lg lg:text-2xl font-bold mx-auto"
+                        class="flex  items-center text-lg lg:text-2xl font-bold mx-auto"
                     >
                         Experience
-                        <article class="mt-2 bg-gray-400/20 p-2 rounded-xl">
+                    </h2>
+                        <article class=" flex justify-center items-center pt-2 ">
                             <Jobs />
                         </article>
-                    </h2>
                 </div>
             </main>
         </div>

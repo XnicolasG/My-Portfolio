@@ -1,0 +1,33 @@
+---
+import Card2 from './Card2.astro'
+
+    const Education = [
+    {
+        Date: "2021 - 2022",
+        Title: "Front-End Development",
+        Entity: `Academia Geek - Bootcamp`,
+        location: 'Remote'
+    },
+    {
+        Date: "2019 -  2021",
+        Title: "Gastromic Administration",
+        Entity:`Gato Dumas`,
+        location:'Bogotá, CO'
+    },
+    {
+        Date: "2017 I -  2017 II",
+        Title: "English - high int. 7",
+        Entity:`LaGuardia Community College`,
+        location:'New York, US'
+    }
+];
+---
+<section class="">
+    {
+        Education.map((it) => (
+            <div class="mb-10 ms-4">
+                <Card2 {...it} />
+            </div>
+        ))
+    }
+</section>

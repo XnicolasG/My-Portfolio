@@ -1,11 +1,11 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro";
+import Card from "./Card.astro";
 const EXPERIENCE = [
     {
         Date: "March 2023 - April 2023",
         Title: "Developer Jr - IOIP",
         Description: `Designing BIM workflows tailored to client requirements. Customizations crafted through JavaScript and SQL. 
-            Utilizing React (JS, TS) for product code support and Blazor for product development`,
+            Utilizing React (JS, TS) for product code support and Blazor for product development.`,
     },
     {
         Date: "March 2021 - September 2021",
@@ -17,12 +17,12 @@ const EXPERIENCE = [
 ];
 ---
 
-<ol class="relative border-s border-gray-200 ml-3">
+<section class="">
     {
         EXPERIENCE.map((it) => (
-            <li class="mb-10 ms-4">
-                <ExperienceItem {...it} />
-            </li>
+            <div class="mb-10 ms-4">
+                <Card {...it} />
+            </div>
         ))
     }
-</ol>
+</section>

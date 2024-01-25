@@ -1,0 +1,29 @@
+---
+interface Props {
+    Date: string;
+    Title: string;
+    Entity: string;
+    location:string;
+}
+const { Date, Title, Entity, location } = Astro.props;
+---
+
+
+<article
+    class="block w-[100%] p-2  border-t-2 pt-2  border-indigo-500  "
+>
+<p class="text-sm font-light text-white/60">
+    {Date}
+</p>
+    <h5
+        class="mb-2 text-base font-bold tracking-tight bg-gradient-to-r from-red-400 to-pink-600 bg-clip-text text-transparent"
+    >
+        {Title}
+    </h5>
+    <p class="text-sm font-normal text-gray-700 dark:text-white">
+        {Entity}
+    </p>
+    <p>
+        {location}
+    </p>
+</article>
