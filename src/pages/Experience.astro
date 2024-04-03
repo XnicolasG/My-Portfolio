@@ -31,7 +31,7 @@ import Platzi from "../components/icons/Platzi.astro";
                 </h1>
             </article>
             <main
-                class="flex flex-col gap-x-1 sm:flex-row justify-center items-center sm:max-h-[680px] overflow-y-auto overflow-x-none sm:w-[415px] md:w-[415px] sm:mt-2 lg:w-[560px] xl:w-[730px]"
+                class="main flex flex-col gap-x-1 sm:flex-row justify-center items-start sm:max-h-[680px] overflow-y-auto overflow-x-none sm:w-[415px] md:w-[450px] sm:mt-2 lg:w-[560px] xl:w-[730px]"
             >
                 <div class="flex flex-col w-full sm:w-1/2 order-2 ">
                     <h2
@@ -44,13 +44,13 @@ import Platzi from "../components/icons/Platzi.astro";
                     </article>
                     <div class="flex flex-col mx-auto">
                         <h2 class="text-lg font-bold bg-gradient-to-r from-purple-200 to-purple-300 bg-clip-text text-transparent mb-2">●Online studies●</h2>
-                        <SocialButtons >
+                        <SocialButtons href="https://platzi.com/p/Xnicolasg/" >
                             <Platzi class="size-4 " />
                             <span>Platzi</span>
                         </SocialButtons>
                     </div>
                 </div>
-                <div class="flex flex-col w-full sm:w-1/2 order-1 sm:order-2">
+                <div class="flex flex-col w-full sm:w-1/2 order-1 h-full overflow-y-auto sm:order-2">
                     <h2
                         class="flex  items-center text-lg lg:text-2xl font-bold mx-auto"
                     >
@@ -75,5 +75,8 @@ import Platzi from "../components/icons/Platzi.astro";
     }
     .name {
         font-family: "MigraItalic-ExtralightItalic", italic;
+    }
+    .main{
+        scrollbar-width: none;
     }
 </style>
