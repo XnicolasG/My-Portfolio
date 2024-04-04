@@ -1,22 +1,23 @@
 ---
 import { Image } from "astro:assets";
 import SocialButtons from "../SocialNav/SocialButtons.astro";
-const { name, image, description, technologies } = Astro.props;
+const { name, image, description, technologies,link } = Astro.props;
 ---
 
-<section class="w-[95%] flex flex-col border-2 border-transparent border-t-indigo-600">
+<section class="w-[95%] my-2 flex flex-col border-2 border-transparent border-t-indigo-600">
     <h1
-        class="font-bold text-xl bg-gradient-to-r from-rose-500 to-purple-600 bg-clip-text text-transparent"
+        class="font-bold mt-2 text-xl bg-gradient-to-r from-rose-500 to-purple-600 bg-clip-text text-transparent"
     >
         {name}
     </h1>
     <section class="flex flex-col lg:flex-row items-center gap-x-2">
-        <div class=" w-92 rounded-md overflow-hidden ">
-            <a href="https://app-to-do-chi.vercel.app/" target="_blank">
-                <Image class="w-full hover:scale-125 hover:rotate-3 transition-all duration-200" src={image} alt=`proyect ${name}` />
+        <div class="w-full lg:w-1/2 rounded-md overflow-hidden ">
+            
+            <a href={link} target="_blank">
+                <Image class="w-full h-full object-cover hover:scale-125 hover:rotate-3 transition-all duration-200" src={image} alt=`proyect ${name}` />
             </a>
         </div>
-        <div class="flex flex-col justify-center items-center">
+        <div class="flex flex-col w-full lg:w-1/2 justify-center items-center">
             <p class="text-pretty">{description}</p>
             <div
                 class="flex flex-wrap w-[95%] justify-center items-center rounded-lg bg-gray-400/20 mt-1 mb-4 sm:mb-1"

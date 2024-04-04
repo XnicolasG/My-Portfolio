@@ -2,11 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import "@fontsource/fjalla-one";
 import ToDo from "../img/ToDo.webp";
+import SmartShop from '../img/SmartShop.webp'
 import { Image } from "astro:assets";
 import Dragon from "../img/Dragon.jpeg";
 import ProyectCard from "../components/Proyects/ProyectCard.astro";
 import React from "../components/icons/React.astro";
 import JavaScript from "../components/icons/JavaScript.astro";
+import Tailwind from "../components/icons/Tailwind.astro";
 
 const proyects = [
     {
@@ -24,6 +26,28 @@ const proyects = [
                 icon: JavaScript
             },
         ],
+        link: 'https://app-to-do-chi.vercel.app/'
+    },
+    {
+        name: "E-commerce",
+        image: SmartShop,
+        description:
+            "Our responsive web app, powered by React, Vite, and Tailwind CSS, replicates e-commerce functionalities by fetching products from an API. Users can seamlessly browse, add items to their cart, and complete purchases, all facilitated by React Router DOM for smooth navigation.",
+        technologies: [
+            {
+                name: "React",
+                icon: React,
+            },
+            {
+                name: "JavaScript",
+                icon: JavaScript
+            },
+            {
+                name: "Tailwind",
+                icon: Tailwind
+            },
+        ],
+        link: 'https://smartshop-ten.vercel.app/'
     },
 ];
 ---
@@ -51,7 +75,7 @@ const proyects = [
                 </h1>
             </article>
             <main
-                class="flex flex-col items-center justify-center sm:w-[395px] md:w-[465px] sm:mt-2 lg:w-[560px] xl:w-[730px]"
+                class="flex flex-col md:max-h-[70vh] overflow-y-auto items-center justify-start sm:w-[395px] md:w-[465px] sm:mt-2 lg:w-[560px] xl:w-[730px]"
             >
             {
                 proyects.map((proyect) => (
@@ -60,6 +84,7 @@ const proyects = [
                     image={proyect.image}
                     description={proyect.description}
                     technologies={proyect.technologies}
+                    link={proyect.link}
                     />
                 ))
             }
