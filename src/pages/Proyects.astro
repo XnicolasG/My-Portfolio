@@ -1,8 +1,31 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "@fontsource/fjalla-one";
+import ToDo from "../img/ToDo.webp";
 import { Image } from "astro:assets";
-import Dragon from '../img/Dragon.jpeg'
+import Dragon from "../img/Dragon.jpeg";
+import ProyectCard from "../components/Proyects/ProyectCard.astro";
+import React from "../components/icons/React.astro";
+import JavaScript from "../components/icons/JavaScript.astro";
+
+const proyects = [
+    {
+        name: "Task Manager",
+        image: ToDo,
+        description:
+            "Our web app, currently available only for desktop view, serves as a task manager where tasks can be categorized by status. It also includes weather information thanks to API integration.",
+        technologies: [
+            {
+                name: "React",
+                icon: React,
+            },
+            {
+                name: "JavaScript",
+                icon: JavaScript
+            },
+        ],
+    },
+];
 ---
 
 <Layout
@@ -19,23 +42,44 @@ import Dragon from '../img/Dragon.jpeg'
                     >✹</span
                 >
                 <h1 class="text-xl">
-                    This Page is under construction
+                    Explore a glimpse of my work, where creativity meets code.
+                    <p
+                        class="name opacity-0 md:opacity-100 text-lg sm:text-xl tracking-wider font-bold text-purple-200 md:before:content-['⌨️'] text-"
+                    >
+                        Proyects
+                    </p>
                 </h1>
             </article>
             <main
-				class="flex flex-col items-center justify-center sm:w-[395px]  md:w-[415px] sm:mt-2 lg:w-[560px] xl:w-[730px]"
-			>
-            <Image class=" mx-auto rounded-lg w-[90%] " src={Dragon} alt="dragon" />
-            <p class="opacity-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio officiis possimus expedita, sapiente earum harum excepturi consectetur cumque dolores maiores architecto dolore, deleniti modi odit vero, dolorem eius quaerat quos.</p>
-            <p class="opacity-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio officiis possimus expedita, sapiente earum harum excepturi consectetur cumque dolores maiores architecto dolore, deleniti modi odit vero, dolorem eius quaerat quos.</p>
-
-        </main>
+                class="flex flex-col items-center justify-center sm:w-[395px] md:w-[465px] sm:mt-2 lg:w-[560px] xl:w-[730px]"
+            >
+            {
+                proyects.map((proyect) => (
+                    <ProyectCard 
+                    name={proyect.name}
+                    image={proyect.image}
+                    description={proyect.description}
+                    technologies={proyect.technologies}
+                    />
+                ))
+            }
+            </main>
         </div>
     </section>
 </Layout>
 
 <style>
-        h1{
-			font-family: "Fjalla One", sans-serif;
-		}
+    @font-face {
+        font-family: "MigraItalic-ExtralightItalic";
+        src: url("/fonts/MigraItalic-ExtralightItalic.ttf") format("truetype");
+    }
+    h1 {
+        font-family: "Fjalla One", sans-serif;
+    }
+    .name {
+        font-family: "MigraItalic-ExtralightItalic", italic;
+    }
+    .main {
+        scrollbar-width: none;
+    }
 </style>
