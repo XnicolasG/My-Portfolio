@@ -1,40 +1,45 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "@fontsource/fjalla-one";
-import ToDo from "../img/ToDo.webp";
+import kanbanTask from "../img/kanbanTask.png"
 import SmartShop from '../img/SmartShop.webp'
-import { Image } from "astro:assets";
-import Dragon from "../img/Dragon.jpeg";
+import mpwedding from "../img/mpwedding.png"
 import ProyectCard from "../components/Proyects/ProyectCard.astro";
 import React from "../components/icons/React.astro";
+import AstroIcon from "../components/icons/AstroIcon.astro";
 import JavaScript from "../components/icons/JavaScript.astro";
+import TypeScript from "../components/icons/TypeScript.astro"
 import Tailwind from "../components/icons/Tailwind.astro";
 import ReactRouter from "../components/icons/ReactRouter.astro";
 import Vite from "../components/icons/Vite.astro";
 
 const proyects = [
     {
-        name: "Task Manager",
-        image: ToDo,
+        name: "Kanban Task Manager",
+        image: kanbanTask,
         description:
-            "Our web app, currently available only for desktop view, serves as a task manager where tasks can be categorized by status. It also includes weather information thanks to API integration.  This proyect is still in progress",
+            "An Interactive, responsive web app for managing tasks using drag & drop, priority filtering, real-time editing, and cloud persistence via JSONBin. Built with React, TypeScript, Tailwind CSS, and localStorage",
         technologies: [
             {
                 name: "React",
                 icon: React,
             },
             {
-                name: "JavaScript",
-                icon: JavaScript
+                name: "TypeScript",
+                icon: TypeScript
+            },
+            {
+                name: "Tailwind",
+                icon: Tailwind
             },
         ],
-        link: 'https://app-to-do-chi.vercel.app/'
+        link: 'https://kanban-i0xcljm0j-xnicolasgs-projects.vercel.app/'
     },
     {
         name: "E-commerce",
         image: SmartShop,
         description:
-            "Our responsive web app, powered by React, Vite, and Tailwind CSS, replicates e-commerce functionalities by fetching products from an API. Users can seamlessly browse, add items to their cart, and complete purchases, all facilitated by React Router DOM for smooth navigation. This proyect is still in progress",
+            "Responsive web app, powered by React and Tailwind CSS, replicates e-commerce functionalities by fetching products from an API. Users can seamlessly browse, add items to their cart, complete purchases and manage users profiles.",
         technologies: [
             {
                 name: "React",
@@ -49,15 +54,36 @@ const proyects = [
                 icon: Tailwind
             },
             {
-                name: "Vite",
-                icon: Vite
-            },
-            {
                 name: "React Router",
                 icon: ReactRouter
             },
         ],
         link: 'https://smartshop-ten.vercel.app/'
+    },
+    {
+        name: "Wedding - landing page",
+        image: mpwedding,
+        description:
+            "Responsive landing page built with Astro, Tailwind, and React, created to inform tourist plans, wedding's details and mainly manage guest confirmations for a real wedding. Database powered by Supabase-powered in a RSVP form and a hidden admin dashboard to view submissions in real time.",
+        technologies: [
+            {
+                name: "Astro",
+                icon: AstroIcon,
+            },
+            {
+                name: "JavaScript",
+                icon: JavaScript
+            },
+            {
+                name: "Tailwind",
+                icon: Tailwind
+            },
+            {
+                name: "React",
+                icon: React
+            },
+        ],
+        link: 'https://melissa-pedro.vercel.app/'
     },
 ];
 ---
