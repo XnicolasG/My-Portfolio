@@ -1,22 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "@fontsource/fjalla-one";
-import kanbanTask from "../img/kanbanTask.png"
-import SmartShop from '../img/SmartShop.webp'
-import mpwedding from "../img/mpwedding.png"
 import ProyectCard from "../components/Proyects/ProyectCard.astro";
 import React from "../components/icons/React.astro";
 import AstroIcon from "../components/icons/AstroIcon.astro";
 import JavaScript from "../components/icons/JavaScript.astro";
-import TypeScript from "../components/icons/TypeScript.astro"
+import TypeScript from "../components/icons/TypeScript.astro";
 import Tailwind from "../components/icons/Tailwind.astro";
 import ReactRouter from "../components/icons/ReactRouter.astro";
-import Vite from "../components/icons/Vite.astro";
+import Pages from "../layouts/Pages.astro";
 
-const proyects = [
+const projects = [
     {
+        id: "kanban-board",
         name: "Kanban Task Manager",
-        image: kanbanTask,
+        image: "/img/kanbanTask.png",
         description:
             "An Interactive, responsive web app for managing tasks using drag & drop, priority filtering, real-time editing, and cloud persistence via JSONBin. Built with React, TypeScript, Tailwind CSS, and localStorage",
         technologies: [
@@ -26,18 +24,19 @@ const proyects = [
             },
             {
                 name: "TypeScript",
-                icon: TypeScript
+                icon: TypeScript,
             },
             {
                 name: "Tailwind",
-                icon: Tailwind
+                icon: Tailwind,
             },
         ],
-        link: 'https://kanban-i0xcljm0j-xnicolasgs-projects.vercel.app/'
+        link: "/Projects/kanban",
     },
     {
+        id:"smartshop",
         name: "E-commerce",
-        image: SmartShop,
+        image: "/img/SmartShop.webp",
         description:
             "Responsive web app, powered by React and Tailwind CSS, replicates e-commerce functionalities by fetching products from an API. Users can seamlessly browse, add items to their cart, complete purchases and manage users profiles.",
         technologies: [
@@ -47,22 +46,23 @@ const proyects = [
             },
             {
                 name: "JavaScript",
-                icon: JavaScript
+                icon: JavaScript,
             },
             {
                 name: "Tailwind",
-                icon: Tailwind
+                icon: Tailwind,
             },
             {
                 name: "React Router",
-                icon: ReactRouter
+                icon: ReactRouter,
             },
         ],
-        link: 'https://smartshop-ten.vercel.app/'
+        link: "https://smartshop-ten.vercel.app/",
     },
     {
+        id:"",
         name: "Wedding - landing page",
-        image: mpwedding,
+        image: "/img/mpwedding.png",
         description:
             "Responsive landing page built with Astro, Tailwind, and React, created to inform tourist plans, wedding's details and mainly manage guest confirmations for a real wedding. Database powered by Supabase-powered in a RSVP form and a hidden admin dashboard to view submissions in real time.",
         technologies: [
@@ -72,61 +72,48 @@ const proyects = [
             },
             {
                 name: "JavaScript",
-                icon: JavaScript
+                icon: JavaScript,
             },
             {
                 name: "Tailwind",
-                icon: Tailwind
+                icon: Tailwind,
             },
             {
                 name: "React",
-                icon: React
+                icon: React,
             },
         ],
-        link: 'https://melissa-pedro.vercel.app/'
+        link: "https://melissa-pedro.vercel.app/",
     },
 ];
 ---
 
 <Layout
-    title="Nicolás' Proyects -  Front-End developer"
-    description="This is some of my proyects where you can see the technologies that i've been using"
+    title="Nicolás' Projects -  Front-End developer"
+    description="This is some of my projects where you can see the technologies that i've been using"
 >
-    <section
-        class="mx-auto bg-gray-950 w-[95%] sm:w-3/3 md:w-full p-4 rounded-b-2xl sm:rounded-2xl"
+    <Pages
+        title="Explore a glimpse of my work, where creativity meets code."
+        subtitle="Projects"
+        icon="⌨️"
     >
-        <div class="flex flex-col w-full gap-x-2">
-            <article class="flex items-start">
-                <span
-                    class="pretitle flex items-center text-5xl mr-2 bg-gradient-to-r from-purple-200 to-purple-500 bg-clip-text text-transparent"
-                    >✹</span
-                >
-                <h1 class="text-xl">
-                    Explore a glimpse of my work, where creativity meets code.
-                    <p
-                        class="name opacity-0 md:opacity-100 text-lg sm:text-xl tracking-wider font-bold text-purple-200 md:before:content-['⌨️'] text-"
-                    >
-                        Proyects
-                    </p>
-                </h1>
-            </article>
-            <main
-                class="flex flex-col md:max-h-[70vh] overflow-y-auto items-center justify-start sm:w-[395px] md:w-[465px] sm:mt-2 lg:w-[560px] xl:w-[730px]"
-            >
+        <main
+            class="flex flex-col md:max-h-[70vh] overflow-y-auto items-center justify-start sm:w-[395px] md:w-[465px] sm:mt-2 lg:w-[560px] xl:w-[730px]"
+        >
             {
-                proyects.map((proyect) => (
-                    <ProyectCard 
-                    name={proyect.name}
-                    image={proyect.image}
-                    description={proyect.description}
-                    technologies={proyect.technologies}
-                    link={proyect.link}
+                projects.map((project) => (
+                    <ProyectCard
+                        id={project.id}
+                        name={project.name}
+                        image={project.image}
+                        description={project.description}
+                        technologies={project.technologies}
+                        link={project.link}
                     />
                 ))
             }
-            </main>
-        </div>
-    </section>
+        </main>
+    </Pages>
 </Layout>
 
 <style>

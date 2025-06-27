@@ -1,0 +1,37 @@
+---
+import "@fontsource/fjalla-one";
+const { title, subtitle,icon } = Astro.props;
+---
+
+<section
+    class="mx-auto bg-gray-950 w-[95%] sm:w-3/3 md:w-full p-4 rounded-b-2xl sm:rounded-2xl"
+>
+    <div class="flex h-full flex-col w-full gap-x-2">
+        <article class="flex items-start">
+            <span
+                class="pretitle flex text-5xl mr-2 bg-gradient-to-r from-purple-200 to-purple-500 bg-clip-text text-transparent"
+                >✹</span
+            >
+            <h1 class="text-xl">
+                {title}
+                <p
+                    class="name flex items-center gap-x-2 text-lg sm:text-xl tracking-wider font-bold text-purple-200 "
+                >
+                <span class={`${icon === "👈🏻" && 'rotate-90 sm:rotate-0'}`}>{icon}</span>
+                    {subtitle}
+                </p>
+            </h1>
+        </article>
+        <slot />
+    </div>
+</section>
+<style>
+    @font-face {
+        font-family: "MigraItalic-ExtralightItalic";
+        src: url("/fonts/MigraItalic-ExtralightItalic.ttf") format("truetype");
+    }
+    .pretitle,
+    .name {
+        font-family: "MigraItalic-ExtralightItalic", italic;
+    }
+</style>

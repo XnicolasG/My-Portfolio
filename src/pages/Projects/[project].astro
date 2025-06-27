@@ -1,0 +1,97 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Pages from "../../layouts/Pages.astro";
+import { projects } from "../../i18n/en/DBProjects";
+import Left from "../../components/icons/Left.astro";
+
+export const getStaticPaths = () => {
+    return projects.map((project) => ({ params: { project: project.route } }));
+};
+
+const { project } = Astro.params;
+const currentProject = projects.find((p) => p.route === project);
+---
+
+<Layout
+    title={`Nicolás' Project -  ${currentProject?.name}`}
+    description={currentProject?.description ?? ""}
+>
+    <Pages
+        title={currentProject?.name}
+        subtitle={currentProject?.subName}
+        icon="📋"
+    >
+        <main
+            class="text-pretty flex flex-col md:max-h-[70vh] items-center sm:w-[395px] md:w-[415px] sm:mt-2 lg:w-[560px] xl:w-[730px]"
+        >
+            <section
+                class="w-[95%] my-2 py-2 grid grid-rows-2 sm:grid-cols-2 gap-4 border-2 border-transparent border-t-indigo-600"
+            >
+                <div class="flex flex-col gap-4">
+                    <article>
+                        <a
+                            class="gap-2 flex items-center w-28 rounded-full ring-2 ring-white hover:bg-white hover:text-black p-1 px-4 transition-all duration-100"
+                            href="/Projects"
+                        >
+                            <Left /> Back
+                        </a>
+                        <h3
+                            class="font-bold my-2 text-2xl bg-gradient-to-r from-rose-500 to-purple-600 bg-clip-text text-transparent"
+                        >
+                            Description
+                        </h3>
+                        <p class="text-pretty">{currentProject?.description}</p>
+                    </article>
+                    <article>
+                        <h3
+                            class="font-bold my-2 text-2xl bg-gradient-to-r from-rose-500 to-purple-600 bg-clip-text text-transparent"
+                        >
+                            highlights
+                        </h3>
+                        {
+                            currentProject?.highlights.map((item) => (
+                                <li>{item}</li>
+                            ))
+                        }
+                    </article>
+                </div>
+                <div class="row-start-1 sm:col-start-2">
+                    <figure
+                        class="flex w-64 border-2 border-transparent hover:border-rose-500 rounded overflow-hidden transition-all duration-200"
+                    >
+                        <img
+                            style={`view-transition-name: ${currentProject?.id}`} 
+                            class="w-full object-cover"
+                            src={currentProject?.image}
+                            alt={currentProject?.name}
+                        />
+                    </figure>
+                    <article class="flex flex-wrap gap-2 my-2">
+                        {
+                            currentProject?.technologies.map((item) => (
+                                <p
+                                    class="p-1 px-2 text-sm font-medium
+                                 rounded-xl bg-blue-900/40 text-blue-50"
+                                >
+                                    {item}
+                                </p>
+                            ))
+                        }
+                    </article>
+                    <section class="w-full flex justify-around my-4 px-4">
+                        <a
+                            class="flex items-center rounded-full ring-2 ring-white hover:bg-white hover:text-black p-1 px-4 transition-all duration-100"
+                            target="_blank"
+                            href={currentProject?.demoUrl}>🔗 demo</a
+                        >
+                        <a
+                            class="flex items-center rounded-full ring-2 ring-white hover:bg-white hover:text-black p-1 px-4 transition-all duration-100"
+                            target="_blank"
+                            href={currentProject?.codeUrl}>💻 code</a
+                        >
+                    </section>
+                </div>
+            </section>
+        </main>
+    </Pages>
+</Layout>

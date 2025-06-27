@@ -24,7 +24,7 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
-	<body class="bg-gradient-to-br from-blue-900 via-violet-900 to-gray-950">
+	<body class="bg-gradient-to-br from-blue-900 via-violet-900 to-gray-950  md:overflow-y-hidden">
 		<Header />
 		<section class="flex flex-col sm:flex-row w-full">
 			<Main />
@@ -35,6 +35,34 @@ const { title, description } = Astro.props;
 	</body>
 </html>
 <style is:global>
+	@view-transition {
+		navigation: auto
+	}
+	::view-transition-group(*){
+		animation-duration: 0.2s
+	}
+	::view-transition-old(root){
+		animation: slide-out-rigth 0.5s forwards
+	}
+	::view-transition-new(root){
+		animation: slide-out-left 0.5s forwards
+	}
+	@keyframes slide-out-rigth {
+		from{
+			transform: translateX(0);
+		}
+		to{
+			transform: translateX(100%);
+		}
+	}
+	@keyframes slide-out-left {
+		from{
+			transform: translateX(100%);
+		}
+		to{
+			transform: translateX(0);
+		}
+	}
 	:root {
 		color-scheme: ligh dark;
 	}

@@ -1,15 +1,15 @@
 ---
 import { Image } from "astro:assets";
-import meNy from '../img/Me-Ny-Edit.jpg'
+import meNy from '/img/Me-Ny-Edit.jpg'
 import meCartoon from '../img/me.CartoonBg.png'
 ---
 <article class="relative w-36 sm:w-40  md:w-46 lg:w-44 transition-all  ease-in duration-300 cursor-pointer ContImg " title='Hello World!'>
-    <Image 
+    <img 
     class='first rounded-xl object-cover w-full'  
-    src={meNy} alt='NYC' />
-    <Image 
+    src='/img/Me-Ny-Edit.jpg' alt='NYC' />
+    <img 
     class="second absolute bottom-0 left-4 right-0 mx-auto transform translate-y-[30%] transition ease-in-out duration-500 opacity-0 w-52" 
-    src={meCartoon} alt='cartoon' />
+    src={'/img/me.CartoonBg.png'} alt='cartoon' />
 </article>
 
 <style>

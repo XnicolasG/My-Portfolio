@@ -2,86 +2,67 @@
 import Layout from "../layouts/Layout.astro";
 import "@fontsource/fjalla-one";
 import Indexlearning from "../components/index/Indexlearning.astro";
+import Pages from "../layouts/Pages.astro";
 ---
 
 <Layout
 	title="Nicolás' Portfolio -  Front-End developer"
 	description="Open to work to web development using React, Astro, Tailwind"
 >
-	<section
-		class="mx-auto bg-gray-950 w-[95%] sm:w-3/3 md:w-full p-4 rounded-b-2xl sm:rounded-2xl"
-	>
-		<div class="flex h-full flex-col w-full gap-x-2 ">
-			<article class="flex items-start">
-				<span
-					class="pretitle flex text-5xl mr-2 bg-gradient-to-r from-purple-200 to-purple-500 bg-clip-text text-transparent"
-					>✹</span
-				>
-				<h1 class="text-xl">
-					Hello there, I'm that guy
-					<p
-						class="name text-lg sm:text-xl tracking-wider font-bold text-purple-200 before:content-['☝🏻'] sm:before:content-['👈🏻'] text-"
-					>
-						Nicolás
-					</p>
-				</h1>
-			</article>
-			<main
-				class=" text-pretty flex place-self-center flex-col my-auto h-full justify-center sm:w-[395px] md:w-[415px] sm:mt-2 lg:w-[560px] xl:w-[730px]"
-			>
-				<p class="uppercase mt-4 font-semibold">
-					I'm Nicolás, a <span class="highlight"
-						>front-end developer</span
-					> based in Colombia, mainly focused on <span
-						class="font-bold bg-gradient-to-r from-sky-300 to-blue-400 bg-clip-text text-transparent"
-						>React</span
-					>. Not exactly an engineer, but always vibing with the idea
-					of picking up new skills. That vibe led me into the whole
-					software development scene.
-				</p>
-				<p class="uppercase mt-4 font-semibold">
-					Creating has always been my thing – it motivates me and
-					drives me to contribute my <span class="highlight"
-						>creative value</span
-					> to innovative companies. I'm all about growing professionally
-					and making a real impact.
-				</p>
-				<p class="uppercase mt-4 font-semibold">
-					I've successfully launched web and desktop apps, optimized performance, and
-					delivered seamless user experiences through my front-end
-					development work. I'm excited to <span class="highlight"> continue growing</span> and
-					contributing my skills to innovative projects.
-				</p>
+	<Pages title="Hello there, I'm that guy" subtitle="Nicolás" icon="👈🏻">
+		<main
+			class="text-pretty flex flex-col h-full items-center sm:w-[395px] md:w-[415px] sm:mt-2 lg:w-[560px] xl:w-[730px]"
+		>
+			<p class="uppercase mt-4 font-semibold">
+				I'm a <span class="highlight">front-end developer</span>
+				from Colombia focused on building clean, interactive interfaces —
+				mainly using <span
+					class="font-bold bg-gradient-to-r from-sky-300 to-blue-400 bg-clip-text text-transparent"
+					>React</span
+				>, Tailwind, and Astro.
+			</p>
 
-				<Indexlearning />
-			</main>
-		</div>
-	</section>
+			<p class="uppercase mt-4 font-semibold">
+				With a non-traditional background, I got into <span
+					class="highlight">software development</span
+				> through my curiosity and love for creating things that feel good
+				to use.
+			</p>
 
-	<style>
-		@font-face {
-			font-family: "MigraItalic-ExtralightItalic";
-			src: url("/fonts/MigraItalic-ExtralightItalic.ttf")
-				format("truetype");
-		}
-		h1,
-		.highlight,
-		h2 {
-			font-family: "Fjalla One", sans-serif;
-		}
-		.highlight {
-			background-image: linear-gradient(
-				to right,
-				rgb(239, 40, 40),
-				rgb(241, 54, 207)
-			);
-			-webkit-background-clip: text;
-			color: transparent;
-			letter-spacing: 0.05em;
-		}
-		.pretitle,
-		.name {
-			font-family: "MigraItalic-ExtralightItalic", italic;
-		}
-	</style>
+			<p class="uppercase mt-4 font-semibold">
+				I've built web and desktop apps, improved performance, and
+				<span class="highlight"
+					>delivered user-focused experiences.</span
+				> Lately, I’m diving into TypeScript and exploring modern stacks
+				like MERN, Next.js and Python.
+			</p>
+
+			<p class="uppercase mt-4 font-semibold">
+				I'm into thoughtful projects that blend design and
+				functionality, and I’m always aiming to make a <span
+					class="highlight">real impact</span
+				>.
+			</p>
+
+			<Indexlearning />
+		</main>
+
+		<style>
+			h1,
+			.highlight,
+			h2 {
+				font-family: "Fjalla One", sans-serif;
+			}
+			.highlight {
+				background-image: linear-gradient(
+					to right,
+					rgb(239, 40, 40),
+					rgb(241, 54, 207)
+				);
+				-webkit-background-clip: text;
+				color: transparent;
+				letter-spacing: 0.05em;
+			}
+		</style>
+	</Pages>
 </Layout>

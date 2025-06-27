@@ -1,0 +1,55 @@
+
+export const projects = [
+  {
+    id: "kanban-board",
+    name: "Kanban",
+    subName:"Task Board App",
+    image: "/img/kanbanTask.png",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "Context API",
+      "Vite",
+      "Pragmatic DnD",
+      "JSONBin",
+      "LocalStorage",
+    ],
+    description: `Interactive Kanban board built with React, TypeScript, and Tailwind. Allows you to create, edit, delete, and organize tasks via drag & drop, with filters by task name and priority. Uses JSONBin as a backend for data persistence and LocalStorage for appearance preferences.`,
+    highlights: [
+      "Smooth drag & drop with Pragmatic DnD",
+      "Task persistence with JSONBin",
+      "Dynamic task filtering",
+      "Theme preferences saved with LocalStorage",
+    ],
+    route: "kanban",
+    demoUrl: "https://kanban-i0xcljm0j-xnicolasgs-projects.vercel.app/",
+    codeUrl: "https://github.com/XnicolasG/Kanban",
+  },
+  {
+  id: "smartshop",
+  name: "SmartShop",
+  subName:"E-commerce web app simulation",
+  image: "/img/SmartShop.webp",
+  technologies: [
+    "React",
+    "JavaScript",
+    "Tailwind CSS",
+    "Context API",
+    "Vite",
+    "LocalStorage",
+    "Fake Store API",
+  ],
+  description: `E-commerce web application built with React and Tailwind CSS, simulating a complete shopping experience. It features dynamic product listing, user roles (guest, user1, user2), and a simulated payment system that detects card type by number. The app uses Context API for global state and stores data in LocalStorage.`,
+  highlights: [
+    "User roles with conditional UI (guest vs registered)",
+    "Dynamic shopping cart with item counter in navbar",
+    "Simulated payment with card type recognition (Visa/Mastercard)",
+    "Profile switching via avatar dropdown",
+    "Products fetched from Fake Store API",
+  ],
+  route: "/projects/smartshop",
+  demoUrl: "https://smartshop-ten.vercel.app/",
+  codeUrl: "https://github.com/yourusername/smartshop",
+}
+];
