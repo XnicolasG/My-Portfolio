@@ -19,19 +19,19 @@ const currentProject = projects.find((p) => p.route === project);
     <Pages
         title={currentProject?.name}
         subtitle={currentProject?.subName}
-        icon="📋"
+        icon={currentProject?.icon}
     >
         <main
             class="text-pretty flex flex-col md:max-h-[70vh] items-center sm:w-[395px] md:w-[415px] sm:mt-2 lg:w-[560px] xl:w-[730px]"
         >
             <section
-                class="w-[95%] my-2 py-2 grid grid-rows-2 sm:grid-cols-2 gap-4 border-2 border-transparent border-t-indigo-600"
+                class="w-[95%] my-2 py-2 grid grid-rows-2 sm:grid-cols-2 gap-2 border-2 border-transparent border-t-indigo-600"
             >
-                <div class="flex flex-col gap-4">
-                    <article>
+                <div class="flex flex-col gap-4 h-full">
+                    <article class="">
                         <a
                             class="gap-2 flex items-center w-28 rounded-full ring-2 ring-white hover:bg-white hover:text-black p-1 px-4 transition-all duration-100"
-                            href="/Projects"
+                            href={`/Projects#${currentProject?.id}`}
                         >
                             <Left /> Back
                         </a>
@@ -42,17 +42,19 @@ const currentProject = projects.find((p) => p.route === project);
                         </h3>
                         <p class="text-pretty">{currentProject?.description}</p>
                     </article>
-                    <article>
+                    <article class="flex flex-col">
                         <h3
                             class="font-bold my-2 text-2xl bg-gradient-to-r from-rose-500 to-purple-600 bg-clip-text text-transparent"
                         >
                             highlights
                         </h3>
-                        {
-                            currentProject?.highlights.map((item) => (
-                                <li>{item}</li>
-                            ))
-                        }
+                        <ul class="max-h-40 overflow-y-auto pr-2">
+                            {
+                                currentProject?.highlights.map((item) => (
+                                    <li class="list-disc ml-4">{item}</li>
+                                ))
+                            }
+                        </ul>
                     </article>
                 </div>
                 <div class="row-start-1 sm:col-start-2">
@@ -60,7 +62,7 @@ const currentProject = projects.find((p) => p.route === project);
                         class="flex w-64 border-2 border-transparent hover:border-rose-500 rounded overflow-hidden transition-all duration-200"
                     >
                         <img
-                            style={`view-transition-name: ${currentProject?.id}`} 
+                            style={`view-transition-name: ${currentProject?.id}`}
                             class="w-full object-cover"
                             src={currentProject?.image}
                             alt={currentProject?.name}
@@ -95,3 +97,27 @@ const currentProject = projects.find((p) => p.route === project);
         </main>
     </Pages>
 </Layout>
+<style>
+    ::view-transition-old(root){
+		animation: slide-out-rigth 0.5s forwards
+	}
+	::view-transition-new(root){
+		animation: slide-out-left 0.5s forwards
+	}
+	@keyframes slide-out-rigth {
+		from{
+			transform: translateX(0);
+		}
+		to{
+			transform: translateX(100%);
+		}
+	}
+	@keyframes slide-out-left {
+		from{
+			transform: translateX(100%);
+		}
+		to{
+			transform: translateX(0);
+		}
+	}
+</style>

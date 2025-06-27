@@ -3,10 +3,10 @@
 import SocialButtons from "../SocialNav/SocialButtons.astro";
 const { id, name, image, description, technologies, link } = Astro.props;
 console.log(id);
-
 ---
 
 <section
+    id={id}
     class="w-[95%] my-2 flex flex-col border-2 border-transparent border-t-indigo-600"
 >
     <h1
@@ -15,15 +15,25 @@ console.log(id);
         {name}
     </h1>
     <section class="flex flex-col lg:flex-row items-start gap-x-2">
-        <div class="w-full lg:w-1/2 rounded-md overflow-hidden">
-            <a href={link}>
+        <div class="relative group w-full lg:w-1/2 rounded-md overflow-hidden">
+            <figure>
                 <img
-                    style={`view-transition-name: ${id}`} 
-                    class="w-full h-full object-cover hover:scale-125 hover:rotate-3 transition-all duration-200"
+                    style={`view-transition-name: ${id}`}
+                    class="w-full h-full object-cover"
                     src={image}
                     alt=`proyect ${name}`
                 />
-            </a>
+            </figure>
+            <section
+                class="absolute flex items-center justify-center top-0 translate-y-full group-hover:translate-y-0 w-full h-full  transition-all duration-200"
+            >
+                <a
+                    href={link}
+                    class="flex flex-wrap w-20 h-20 justify-center items-center bg-black/60 hover:border-rose-500 hover:text-rose-500 font-medium p-4 font-semibol backdrop-blur-sm rounded-full border-4 transition-all duration-200"
+                >
+                    view
+                </a>
+            </section>
         </div>
         <div class="flex flex-col w-full lg:w-1/2 justify-center items-center">
             <p class="text-pretty">{description}</p>

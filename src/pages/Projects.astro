@@ -57,10 +57,10 @@ const projects = [
                 icon: ReactRouter,
             },
         ],
-        link: "https://smartshop-ten.vercel.app/",
+        link: "/Projects/smartshop",
     },
     {
-        id:"",
+        id:"mpwedding",
         name: "Wedding - landing page",
         image: "/img/mpwedding.png",
         description:
@@ -83,7 +83,7 @@ const projects = [
                 icon: React,
             },
         ],
-        link: "https://melissa-pedro.vercel.app/",
+        link: "/Projects/melissa-pedro-wedding",
     },
 ];
 ---
@@ -117,6 +117,28 @@ const projects = [
 </Layout>
 
 <style>
+    ::view-transition-old(root){
+		animation: slide-out-rigth 0.5s forwards
+	}
+	::view-transition-new(root){
+		animation: slide-out-left 0.5s forwards
+	}
+	@keyframes slide-out-rigth {
+		from{
+			transform: translateX(0);
+		}
+		to{
+			transform: translateX(100%);
+		}
+	}
+	@keyframes slide-out-left {
+		from{
+			transform: translateX(100%);
+		}
+		to{
+			transform: translateX(0);
+		}
+	}
     @font-face {
         font-family: "MigraItalic-ExtralightItalic";
         src: url("/fonts/MigraItalic-ExtralightItalic.ttf") format("truetype");
