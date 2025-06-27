@@ -1,7 +1,6 @@
 ---
-// import { Image } from "astro:assets";
 import SocialButtons from "../SocialNav/SocialButtons.astro";
-const { id, name, image, description, technologies, link } = Astro.props;
+const { id, name, image, description, technologies, link, demo, code } = Astro.props;
 console.log(id);
 ---
 
@@ -29,7 +28,7 @@ console.log(id);
             >
                 <a
                     href={link}
-                    class="flex flex-wrap w-20 h-20 justify-center items-center bg-black/60 hover:border-rose-500 hover:text-rose-500 font-medium p-4 font-semibol backdrop-blur-sm rounded-full border-4 transition-all duration-200"
+                    class="flex flex-wrap w-20 h-20 justify-center items-center bg-black/60 hover:shadow-lg hover:border-rose-500 hover:text-rose-500 font-medium p-4 font-semibol backdrop-blur-sm rounded-full border-4 transition-all duration-200"
                 >
                     view
                 </a>
@@ -51,6 +50,18 @@ console.log(id);
                     ))
                 }
             </div>
+            <section class="w-full text-sm flex justify-around my-1 px-2">
+                        <a
+                            class="flex items-center rounded-full ring-2 ring-white hover:bg-white hover:text-black p-1 px-4 transition-all duration-100"
+                            target="_blank"
+                            href={demo}>🔗 demo</a
+                        >
+                        <a
+                            class="flex items-center rounded-full ring-2 ring-white hover:bg-white hover:text-black p-1 px-4 transition-all duration-100"
+                            target="_blank"
+                            href={code}>💻 code</a
+                        >
+                    </section>
         </div>
     </section>
 </section>
