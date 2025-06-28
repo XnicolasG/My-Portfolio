@@ -1,5 +1,5 @@
 ---
-const { pathname } = Astro.url;
+const { pathname } = Astro.props;
 ---
 
 <header id="myHeader" class="sticky top-0 w-full z-50 sm:block">
@@ -45,7 +45,8 @@ const { pathname } = Astro.url;
 				<a
 					href="/Projects"
 					class={`font-semibold transition ${
-						pathname === "/Projects"
+						pathname === "/Projects" || pathname.startsWith("/Projects")
+
 							? "bg-gradient-to-r from-red-500 to-pink-600 bg-clip-text text-transparent"
 							: "hover:bg-gradient-to-r from-red-300 to-pink-400 bg-clip-text hover:text-transparent"
 					}`}

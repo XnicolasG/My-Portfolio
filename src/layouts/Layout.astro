@@ -8,6 +8,7 @@ interface Props {
 	title: string;
 	description: string;
 }
+const { pathname } = Astro.url;
 
 const { title, description } = Astro.props;
 
@@ -25,7 +26,7 @@ const { title, description } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body class="bg-gradient-to-br from-blue-900 via-violet-900 to-gray-950  md:overflow-y-hidden">
-		<Header />
+		<Header pathname={pathname} />
 		<section class="flex flex-col sm:flex-row w-full">
 			<Main />
 			<aside class="flex mx-auto f-1/2">
