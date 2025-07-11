@@ -3,7 +3,6 @@ import Photo from "./Photo.astro";
 import SocialNav from "./SocialNav/SocialNav.astro";
 import GeneralInfo from "./InfoSection/GeneralInfo.astro";
 import "@fontsource/fjalla-one";
-
 ---
 
 <section
@@ -16,24 +15,28 @@ import "@fontsource/fjalla-one";
         <Photo />
     </div>
     <!-- </div> -->
-    <section class="flex flex-col mt-20 sm:mt-4 md:mt-12 lg:mt-32 tracking-wider">
-        <h1
-            class="name text-2xl mb-1 sm:mb-6 md:mb-1 font-medium lg:text-4xl cursor-default mx-auto"
-        >
-            Nicolás García López
-        </h1>
-
-        <section
-            class="relative inline-flex h-12 w-40  overflow-hidden rounded-xl mx-auto mt-2 p-[5px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
-        >
-            <span
-                class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"
-            ></span>
-            <span
-                class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl before:content-['Front-End'] hover:text-md hover:before:content-['Open_to_work_😉'] transition-all"
+    <section
+        class="flex flex-col mt-20 sm:mt-4 md:mt-12 lg:mt-32 tracking-wider"
+    >
+        <article class="flex justify-around items-center">
+            <h1
+                class="name text-2xl font-medium lg:text-4xl cursor-default mx-auto"
             >
-            </span>
-        </section>
+                Nicolás García López
+            </h1>
+
+            <section
+                class="relative flex items-center h-12 w-fit overflow-hidden rounded-lg  p-0.5 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+            >
+                <span
+                    class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"
+                ></span>
+                <span
+                    class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl before:content-['Front-End'] hover:text-md hover:before:content-['Open_to_work_😉'] transition-all"
+                >
+                </span>
+            </section>
+        </article>
 
         <SocialNav />
         <GeneralInfo />
@@ -41,8 +44,7 @@ import "@fontsource/fjalla-one";
 </section>
 
 <style>
-     h1{
-			font-family: "Fjalla One", sans-serif;
-		}
+    h1 {
+        font-family: "Fjalla One", sans-serif;
+    }
 </style>
-
