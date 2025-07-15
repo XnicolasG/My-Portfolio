@@ -44,14 +44,14 @@ const items = TECHS || TOOLS
         }
     }
     .horizontal-slide-tools {
-        animation: InfiteSlideToLeft 10s linear infinite;
+        animation: InfiteSlideToLeft 7s linear infinite;
     }
     @keyframes InfiteSlideToLeft {
         0% {
             transform: translateX(100%);
         }
         100% {
-            transform: translateX(-100%);
+            transform: translateX(calc(-50% - 2px));
         }
     }
 </style>
